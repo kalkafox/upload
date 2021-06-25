@@ -12,13 +12,13 @@ logging.basicConfig(handlers=[RichHandler()], level=logging.DEBUG)
 log = logging.getLogger('rich')
 log.info("Assembled rich.")
 
-keys = json.loads(open('keys.json').read())
-
 defaults = {
     'tld': 'i.kalka.io',
     'proto': 'https',
     'directory': '/var/www/upload/'
 }
+
+keys = json.loads(open(f'{defaults.get("directory")}keys.json').read())
 
 async def check_url(url):
     pass
@@ -71,7 +71,7 @@ def assemble_web():
 
 def initialize_web(app):
     log.info("Initializing web...")
-    web.run_app(app)
+    web.run_app(app, sock=)
 
 def main():
     app = assemble_web()
