@@ -71,7 +71,7 @@ def assemble_web():
 
 def initialize_web(app):
     log.info("Initializing web...")
-    web.run_app(app, sock='/tmp/image-upload.sock')
+    web.run_app(app, host='127.0.0.1', port='8099')
 
 def main():
     app = assemble_web()
