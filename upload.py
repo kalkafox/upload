@@ -71,7 +71,7 @@ def assemble_web():
 
 def initialize_web(app):
     log.info("Initializing web...")
-    web.run_app(app, sock=)
+    web.run_app(app, sock='/tmp/image-upload.sock')
 
 def main():
     app = assemble_web()
